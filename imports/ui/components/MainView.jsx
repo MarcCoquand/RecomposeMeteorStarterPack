@@ -5,7 +5,7 @@ import React from 'react';
 // in this function. Instead you should call a msg reducer.
 const Task= ({text}) => 
   <div> 
-     <li>{text}</li>
+    <li>{text}</li>
   </div>;
 
 const RenderTasks = ({tasks}) =>{ 
