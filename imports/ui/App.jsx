@@ -4,10 +4,8 @@ import { withTracker} from 'meteor/react-meteor-data';
 import { render } from 'react-dom';
 import { withReducer
        , compose 
-       , withProps
-       , withContext} from "recompose";
+       } from "recompose";
 import { Tasks } from '../api/tasks.js';
-import { matches } from 'z';
 
 // The state of our app, here you put every value that changes over time.
 // Values that change from the server are put in the Subscriptions.
@@ -16,7 +14,7 @@ const initModel = {
     loggedIn: false,
 };
 
-// Subscriptions sends incoming updates from the server
+// Subscriptions sends incoming updates from the server down to view
 const Subscription = withTracker (() => {
     return { sub: 
         { tasks: Tasks.find({}).fetch() 
