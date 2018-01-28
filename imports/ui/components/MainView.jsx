@@ -3,13 +3,13 @@ import React from 'react';
 // The view to be rendered rendered. Every view function should be
 // pure meaning that you should never assign any variables and change any values
 // in this function. Instead you should call a msg reducer.
-const TaskView = ({text}) => 
+const Task= ({text}) => 
   <div> 
      <li>{text}</li>
   </div>;
 
 const RenderTasks = ({tasks}) =>{ 
-  return tasks.map(task => <TaskView key={task._id} text={task.text}/>);
+  return tasks.map(task => <Task key={task._id} text={task.text}/>);
 }
 
 export const MainView = ({mdl,cmd,sub}) =>

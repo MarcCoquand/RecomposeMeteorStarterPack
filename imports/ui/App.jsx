@@ -10,7 +10,7 @@ import { MainView } from './components/MainView.jsx';
 
 // The state of our app, here you put every value that changes over time.
 // Values that change from the server are put in the Subscriptions.
-const initModel = {
+const model = {
     count: 0,
 };
 
@@ -24,7 +24,7 @@ const Subscription = withTracker (() => {
 
 // Update changes the state and can be used to send things to the server. 
 // If you know reducers from Redux this is basically the same thing
-const Update = (mdl, msg) => {
+const update = (mdl, msg) => {
     switch (msg.type) {
         case 'INCREMENT': 
             mdl.count += 1
@@ -39,7 +39,7 @@ const Update = (mdl, msg) => {
 // This wires together the subscriptions and model so they work in harmony. 
 // This is not necessary to understand to use the system.
 const App = 
-    withReducer('mdl', 'cmd', Update, initModel);
+    withReducer('mdl', 'cmd', update, model);
 
 export const View = compose(
   Subscription,
